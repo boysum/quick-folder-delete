@@ -24,28 +24,22 @@
 			<Component Id="BatFile" Guid="c753d7c6-c9f8-4195-969b-c729c17521b0">
 				<File Id="QuickDelete.bat" Source="..\QuickDelete.bat" />
 				<File Id="QuickDeleteShow.bat" Source="..\QuickDeleteShow.bat" />
+				<File Id="Icon.ico" Source="..\Icon.ico" />
 			</Component>
 			<Component Id="RegistryEntries" Guid="3b024278-96dd-4051-9d3c-40333f1eeace">
 				<RegistryKey Root="HKCR"
 							 Key="Folder\shell\Quick Delete"
 					  Action="createAndRemoveOnUninstall">
+					<RegistryValue Type="string" Value="Quickly Delete All Files and Folder"/>
 					<RegistryValue Type="string" Name="Extended" Value=""/>
-				</RegistryKey>
-				<!--<RegistryKey Root="HKCR"
-							 Key="Folder\shell\Quick Delete (Show progress)"
-					  Action="createAndRemoveOnUninstall">
-					<RegistryValue Type="string" Name="Extended" Value=""/>
-				</RegistryKey>-->
+					<RegistryValue Type="string" Name="Icon" Value="[#Icon.ico]"/>
+				</RegistryKey>				
 				<RegistryKey Root="HKCR"
 							 Key="Folder\shell\Quick Delete\command"
 					  Action="createAndRemoveOnUninstall">
 					<RegistryValue Type="string" Value="[#QuickDelete.bat] &quot;%1&quot;"/>
-				</RegistryKey>
-				<!--<RegistryKey Root="HKCR"
-							 Key="Folder\shell\Quick Delete (Show progress)\command"
-					  Action="createAndRemoveOnUninstall">
-					<RegistryValue Type="string" Value="[#QuickDeleteShow.bat] &quot;%1&quot;"/>
-				</RegistryKey>-->
+				</RegistryKey>		
+				
 			</Component>
 			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
 			<!-- <Component Id="ProductComponent"> -->
